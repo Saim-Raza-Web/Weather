@@ -1,3 +1,4 @@
+/* ─── RESET & TOKENS ─────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -7,21 +8,21 @@
 }
 
 :root {
-    --bg: #09090f;
-    --surface: #0f0f1a;
-    --card: #13131f;
-    --border: rgba(255, 255, 255, 0.07);
-    --border2: rgba(255, 255, 255, 0.12);
-    --text: #e8e8f0;
-    --muted: rgba(232, 232, 240, 0.45);
-    --accent: #e8c97a;
-    --accent2: #7dd3fc;
-    --danger: #f87171;
+    --bg: #080e12;
+    --surface: #0c1418;
+    --card: #101c22;
+    --border: rgba(0, 210, 180, 0.08);
+    --border2: rgba(0, 210, 180, 0.18);
+    --text: #d8eee8;
+    --muted: rgba(180, 220, 210, 0.45);
+    --accent: #00d4b4;
+    --accent2: #38bdf8;
+    --danger: #fb7185;
     --sidebar-w: 260px;
     --radius: 16px;
-    --mono: 'DM Mono', monospace;
-    --sans: 'DM Sans', sans-serif;
-    --display: 'Syne', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Plus Jakarta Sans', sans-serif;
+    --display: 'Bebas Neue', sans-serif;
 }
 
 html {
@@ -53,8 +54,8 @@ body {
     z-index: 0;
     pointer-events: none;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        linear-gradient(rgba(0, 210, 180, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 210, 180, 0.03) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse at 30% 50%, black 20%, transparent 70%);
 }
@@ -95,9 +96,9 @@ body {
 
 .logo-text {
     font-family: var(--display);
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 0.2em;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
     color: var(--text);
 }
 
@@ -231,7 +232,7 @@ body {
     border: none;
     background: none;
     color: var(--muted);
-    font-family: var(--display);
+    font-family: var(--sans);
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
@@ -240,13 +241,14 @@ body {
 }
 
 .nav-item:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(0, 212, 180, 0.05);
     color: var(--text);
 }
 
 .nav-item.active {
-    background: rgba(232, 201, 122, 0.1);
+    background: rgba(0, 212, 180, 0.1);
     color: var(--accent);
+    border-left: 2px solid var(--accent);
 }
 
 .nav-icon {
@@ -364,8 +366,9 @@ body {
 
 .hero-city {
     font-family: var(--display);
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
     color: var(--text);
 }
 
@@ -420,8 +423,9 @@ body {
 
 .panel-title {
     font-family: var(--display);
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
 }
 
 /* ─── DASHBOARD GRID ─────────────────────────────────────────── */
@@ -444,8 +448,9 @@ body {
 }
 
 .card:hover {
-    border-color: var(--border2);
+    border-color: rgba(0, 212, 180, 0.25);
     transform: translateY(-1px);
+    box-shadow: 0 0 20px rgba(0, 212, 180, 0.05);
 }
 
 .card::after {
@@ -503,19 +508,20 @@ body {
 
 .temp-main {
     font-family: var(--display);
-    font-size: 72px;
-    font-weight: 800;
+    font-size: 88px;
+    font-weight: 400;
     line-height: 0.9;
     color: var(--text);
-    letter-spacing: -4px;
+    letter-spacing: 2px;
 }
 
 .temp-unit {
     font-family: var(--display);
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 400;
-    color: var(--muted);
+    color: var(--accent);
     margin-top: 8px;
+    letter-spacing: 2px;
 }
 
 .temp-meta {
@@ -886,8 +892,9 @@ body {
 
 .fdc-day {
     font-family: var(--display);
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
     color: var(--muted);
 }
 
@@ -903,8 +910,9 @@ body {
 
 .fdc-hi {
     font-family: var(--display);
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .fdc-lo {
@@ -1226,10 +1234,12 @@ body {
 @keyframes valueFlash {
     0% {
         color: var(--accent);
+        text-shadow: 0 0 12px rgba(0, 212, 180, 0.5);
     }
 
     100% {
         color: var(--text);
+        text-shadow: none;
     }
 }
 
